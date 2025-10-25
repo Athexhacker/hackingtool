@@ -26,7 +26,7 @@ REQUIREMENTS = "requirements.txt"
 
 
 def check_root():
-    if os.getpid() != 0:
+    if os.geteuid() != 0:
         console.print(Panel("[green]This installer must be run as root. Use: sudo python3 install_hackingtool.py[/green]"))
         sys.exit(1)
 
